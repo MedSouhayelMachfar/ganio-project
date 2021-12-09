@@ -1,28 +1,21 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 
 import QuestionItems from "./../Shared/QuestionItems";
 import FAQIllustration from "./../../assets/images/FAQIllustration.svg";
 import styles from "./CommonQuestions.module.css";
+import useFetch from "../../hooks/useFetch";
+import { ContextLanguage } from "./../../context/ContextLanguageWrapper";
+
+const apiURL = "http://127.0.0.1:3010/api/v1/faq";
 
 function CommonQuestions(props) {
     const { dataContent } = props;
 
-    // State for questions
-    const [questions, setQuestions] = useState([]);
-    const apiURL = "http://127.0.0.1:3010/api/v1/faq";
+    const { currentLanguage } = useContext(ContextLanguage);
 
-    useEffect(() => {
-        async function fetchQuestions() {
-            const result = await axios.get(apiURL);
-            setQuestions(result.data.data.questions);
-            console.log(
-                "Data received from server :",
-                result.data.data.questions
-            );
-        }
-        fetchQuestions();
-    }, []);
+    const { isLoading, fetchedData } = useFetch(
+        `${apiURL}?category=faq&lang=${currentLanguage}`
+    );
 
     return (
         <div className={styles["common-question"]}>
@@ -36,7 +29,11 @@ function CommonQuestions(props) {
                     alt="common questions section illustration"
                 />
                 <article>
-                    <QuestionItems data={questions} />
+                    {isLoading ? (
+                        "Loading..."
+                    ) : (
+                        <QuestionItems data={fetchedData} />
+                    )}
                 </article>
             </section>
         </div>

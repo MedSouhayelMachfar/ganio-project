@@ -1,19 +1,31 @@
 const data = require("./../public/data");
 
 // Get frequently asked questions
-const getFrequentlyDataMethod = (faqCategory) => {
+const getFrequentlyDataMethod = (faqCategory, language) => {
+  let questions;
+  switch (language?.toLocaleLowerCase()) {
+    case "en":
+      questions = data.questionsEN;
+      break;
+    case "fr":
+      questions = data.questionsFR;
+      break;
+    case "tn":
+      questions = data.questionsTN;
+      break;
+    default:
+      questions = data.questionsEN;
+  }
   if (!faqCategory) {
-    return data.questions.faq;
+    return questions.faq;
   } else {
     faqCategory = faqCategory.toLocaleLowerCase();
 
-    const keys = Object.keys(data.questions).map((key) =>
-      key.toLocaleLowerCase()
-    );
+    const keys = Object.keys(questions).map((key) => key.toLocaleLowerCase());
     if (!keys.includes(faqCategory)) {
-      return data.questions.faq;
+      return questions.faq;
     } else {
-      return data.questions[faqCategory];
+      return questions[faqCategory];
     }
   }
 };

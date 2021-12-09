@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { ContextLanguage } from "./../context/ContextLanguageWrapper";
-import axios from "axios";
 
 import Button from "../components/UI/Button";
 import Header from "../components/Layout/Header";
@@ -9,37 +8,26 @@ import QuestionsList from "../components/Shared/FAQ/QuestionsList";
 import Footer from "../components/Layout/Footer";
 
 import styles from "./FAQ.module.css";
+import useFetch from "../hooks/useFetch";
 
+const apiURL = "http://127.0.0.1:3010/api/v1/faq";
 function FAQ() {
     // Getting data form our languages context
-    let { data } = useContext(ContextLanguage);
-    // State for questions
-    const [accountQA, setAccountQA] = useState([]);
-    const [dwQA, setDwQA] = useState([]);
-    const [gamesQA, setGamesQA] = useState([]);
-    const [securityQA, setSecurityQA] = useState([]);
-    const apiURL = "http://127.0.0.1:3010/api/v1/faq";
+    let { data, currentLanguage } = useContext(ContextLanguage);
 
-    useEffect(() => {
-        async function fetchQuestions() {
-            const result1 = await axios.get(`${apiURL}?category=account`);
-            const result2 = await axios.get(`${apiURL}?category=dw`);
-            const result3 = await axios.get(`${apiURL}?category=games`);
-            const result4 = await axios.get(`${apiURL}?category=security`);
-            setAccountQA(result1.data.data.questions);
-            setDwQA(result2.data.data.questions);
-            setGamesQA(result3.data.data.questions);
-            setSecurityQA(result4.data.data.questions);
-            console.log(
-                "Data received from server :",
-                result1.data.data.questions,
-                result2.data.data.questions,
-                result3.data.data.questions,
-                result4.data.data.questions
-            );
-        }
-        fetchQuestions();
-    }, []);
+    // 4 api calls to fetch questions by category
+    const { isLoading: accountLoading, fetchedData: accountFetchedData } =
+        useFetch(`${apiURL}?category=account&lang=${currentLanguage}`);
+
+    const { isLoading: dwLoading, fetchedData: dwFetchedData } = useFetch(
+        `${apiURL}?category=dw&lang=${currentLanguage}`
+    );
+    const { isLoading: gamesLoading, fetchedData: gamesFetchedData } = useFetch(
+        `${apiURL}?category=games&lang=${currentLanguage}`
+    );
+    const { isLoading: securityLoading, fetchedData: securityFetchedData } =
+        useFetch(`${apiURL}?category=security&lang=${currentLanguage}`);
+
     return (
         <div className={styles["faq-container"]}>
             <Header
@@ -70,22 +58,38 @@ function FAQ() {
                         className={styles["custom-btn"]}
                     />
                 </div>
-                <QuestionsList
-                    heading={data.faqHeaderContent.btn1}
-                    data={accountQA}
-                />
-                <QuestionsList
-                    heading={data.faqHeaderContent.btn2}
-                    data={dwQA}
-                />
-                <QuestionsList
-                    heading={data.faqHeaderContent.btn3}
-                    data={gamesQA}
-                />
-                <QuestionsList
-                    heading={data.faqHeaderContent.btn4}
-                    data={securityQA}
-                />
+                {accountLoading ? (
+                    "Loading..."
+                ) : (
+                    <QuestionsList
+                        heading={data.faqHeaderContent.btn1}
+                        data={accountFetchedData}
+                    />
+                )}
+                {dwLoading ? (
+                    "Loading..."
+                ) : (
+                    <QuestionsList
+                        heading={data.faqHeaderContent.btn2}
+                        data={dwFetchedData}
+                    />
+                )}
+                {gamesLoading ? (
+                    "Loading..."
+                ) : (
+                    <QuestionsList
+                        heading={data.faqHeaderContent.btn2}
+                        data={gamesFetchedData}
+                    />
+                )}
+                {securityLoading ? (
+                    "Loading..."
+                ) : (
+                    <QuestionsList
+                        heading={data.faqHeaderContent.btn4}
+                        data={securityFetchedData}
+                    />
+                )}
             </section>
             <Footer />
         </div>

@@ -5,8 +5,10 @@ const faqModel = require("../models/faqModel");
 // @access    Public
 const getFrequentlyData = (req, res) => {
   const faqCategory = req.query?.category;
+  const language = req.query?.lang;
 
-  const questions = faqModel.getFrequentlyDataMethod(faqCategory);
+  const questions = faqModel.getFrequentlyDataMethod(faqCategory, language);
+
   res.status(200).json({
     success: "True",
     data: {
