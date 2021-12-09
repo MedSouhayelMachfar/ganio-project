@@ -1,0 +1,39 @@
+.btn {
+  min-width: 125px;
+  max-width: 250px;
+  height: 56px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 28px;
+  background-color: var(--clr-btn-blueish);
+  box-shadow: 0px 2px 0px var(--clr-btn-drop-shadow-blueish);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--font-roboto);
+  font-weight: 900;
+  transition: var(--transition);
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  box-shadow: 0px 2px 8px 0px var(--clr-primary-cyan);
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.active {
+  color: var(--clr-primary-cyan);
+}
+
+@media screen and (max-width: 992px) {
+  .btn {
+    min-width: 125px;
+    max-width: 200px;
+    height: 46px;
+    padding: 15px 30px;
+    font-size: 12px !important;
+    padding: 10px 15px;
+  }
+}

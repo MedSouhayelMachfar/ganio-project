@@ -1,0 +1,42 @@
+.available-games {
+  background: #0d0d48;
+  padding: 100px 0;
+}
+.available-games-heading {
+  width: 542px;
+  min-height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.available-games-heading h2 {
+  font-family: var(--font-chakra-petch);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 57px;
+  line-height: 68px;
+  text-transform: uppercase;
+}
+.available-games-heading h2 span {
+  color: var(--clr-primary-cyan);
+}
+
+.available-games-heading p {
+  font-family: var(--font-roboto);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 576px) {
+  .available-games-heading {
+    width: 100%;
+  }
+}

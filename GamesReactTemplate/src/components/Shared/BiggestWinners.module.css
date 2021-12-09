@@ -1,0 +1,76 @@
+.biggest-winners {
+    max-width: 1548px;
+    min-height: 532px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: fill;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.biggest-winners-wrapper {
+    width: 1110px;
+    min-height: 348px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.biggest-winners img[src="trophyImage"] {
+    width: 260px;
+}
+
+.biggest-winners-content {
+    width: 255px;
+    height: 292px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.biggest-winners-content h2 {
+    text-align: center;
+    font-family: var(--font-chakra-petch);
+}
+
+.biggest-winners-content h2 span {
+    color: var(--clr-primary-cyan);
+}
+
+/* responsive design */
+@media screen and (max-width: 1080px) {
+    .biggest-winners-wrapper > img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .biggest-winners {
+        padding: 100px 0px 50px 0;
+    }
+    .biggest-winners-wrapper {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .biggest-winners-content {
+        width: 600px;
+        height: 150px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .biggest-winners {
+    }
+    .biggest-winners-wrapper {
+    }
+    .biggest-winners-content {
+        width: 450px;
+        height: 200px;
+        text-align: center;
+    }
+}

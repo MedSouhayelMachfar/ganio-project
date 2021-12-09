@@ -1,0 +1,132 @@
+.biggest-winners {
+  padding: 120px 0;
+}
+.biggest-winners-heading {
+  width: 656px;
+  min-height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  margin: 50px auto;
+  background: #00003e;
+}
+
+.biggest-winners-heading h2 {
+  font-family: var(--font-chakra-petch);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 57px;
+  line-height: 68px;
+  text-transform: uppercase;
+}
+.biggest-winners-heading h2 span {
+  color: var(--clr-primary-cyan);
+}
+
+.biggest-winners-heading p {
+  font-family: var(--font-roboto);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 20px 0;
+}
+
+.biggest-winners-content {
+  width: 1110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.biggest-winners-content div.jackpot {
+  position: relative;
+  width: 445px;
+  height: 446px;
+  background: radial-gradient(
+    78.16% 122.14% at 50% 54.76%,
+    #fb0078 0%,
+    #3e0b77 63.7%,
+    #2f0c78 100%
+  );
+  border-radius: 20px;
+}
+
+.biggest-winners-content div.jackpot img:last-of-type {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.biggest-winners-content div.jackpot p {
+  width: 178px;
+  height: 40px;
+  position: absolute;
+  top: 82.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: #4e01ce;
+  border-radius: 20px;
+  text-align: center;
+  font-family: var(--font-chakra-petch);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 6px;
+}
+
+.biggest-winners-content .three-mvps {
+  width: 635px;
+  height: 446px;
+  padding: 30px;
+  background: #480b96;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.biggest-winners-content {
+  width: 1110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.custom-item {
+  height: 90px;
+  padding: 15px 20px;
+  background: #7818dd;
+}
+.custom-item > div > div:nth-child(2) {
+  background: #480b96;
+}
+
+@media screen and (max-width: 1110px) {
+  .biggest-winners-content {
+    width: 100%;
+    flex-direction: column;
+  }
+  .biggest-winners-content div.jackpot {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .biggest-winners-content .three-mvps {
+    width: 100%;
+  }
+  .biggest-winners-heading {
+    width: 100%;
+  }
+}

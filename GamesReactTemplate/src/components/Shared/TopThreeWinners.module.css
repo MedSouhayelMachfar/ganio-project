@@ -1,0 +1,32 @@
+.top-three-winners {
+  background-color: rgba(104, 62, 254, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgb(88, 72, 228);
+  width: 541px;
+  height: 228px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.top-three-winners > img:nth-of-type(1) {
+  width: 431px;
+  height: 56px;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.top-three-winners > img:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: -2px;
+}
+
+@media screen and (max-width: 576px) {
+  .top-three-winners {
+    width: 86%;
+  }
+}

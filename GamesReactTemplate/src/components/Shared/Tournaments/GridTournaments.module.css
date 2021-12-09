@@ -1,0 +1,29 @@
+.grid-layout {
+  width: 1110px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px 0 0 0;
+}
+
+.custom-button {
+  display: block;
+  padding: 5px 15px;
+  width: 101px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid #331dbc;
+  margin: 0 auto;
+  font-size: 12px !important;
+}
+
+@media screen and (max-width: 1110px) {
+  .grid-layout {
+    width: 100%;
+    flex-direction: column;
+  }
+}

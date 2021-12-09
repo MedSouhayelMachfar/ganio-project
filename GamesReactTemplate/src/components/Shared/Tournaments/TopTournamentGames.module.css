@@ -1,0 +1,55 @@
+.top-tournament-games__header {
+  width: 1110px;
+  height: 52px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-tournament-games__header div {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-tournament-games__header div img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.top-tournament-games__img::-webkit-scrollbar {
+  display: none;
+}
+
+.top-tournament-games__img {
+  width: 1110px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: scroll;
+  margin-bottom: 100px;
+  /* Hide scrollbar for IE, Edge and Firefox */
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.top-tournament-games__img img {
+  width: 260px;
+  height: 389px;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+@media screen and (max-width: 1110px) {
+  .top-tournament-games__header {
+    width: 90%;
+  }
+
+  .top-tournament-games__img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+.counter-element {
+  width: 255px;
+  height: 190px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.counter-element img {
+  width: 100px;
+  height: 100px;
+}
+.counter-element h4,
+.counter-element h5 {
+  font-family: var(--font-chakra-petch);
+}
+.counter-element h5 {
+  color: var(--clr-primary-cyan);
+}

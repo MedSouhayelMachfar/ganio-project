@@ -1,0 +1,26 @@
+.feature-carousel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+    margin-top: 140px;
+}
+.feature-carousel img {
+    width: 350px;
+    height: 171px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.feature-carousel::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.feature-carousel {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Right to left */
+.rtlClass.feature-carousel {
+    flex-direction: row-reverse;
+}

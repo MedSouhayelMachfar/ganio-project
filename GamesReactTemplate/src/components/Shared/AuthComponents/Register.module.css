@@ -1,0 +1,135 @@
+.login-form {
+    width: 350px;
+    height: 679px;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+    background: #4e01ce;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-form-header {
+    width: 290px;
+    height: 165px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.login-form-header-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.login-form-header-lower {
+    height: 93px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-form-header-lower h5 {
+    text-transform: uppercase;
+    font-family: var(--font-chakra-petch);
+}
+.login-form-header-lower p span {
+    text-transform: uppercase;
+    color: var(--clr-primary-cyan);
+    cursor: pointer;
+}
+.login-form-header img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/* form part of the modal */
+.login-form-section {
+    height: 454px;
+    background-color: #360589;
+    border-radius: 14px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-form-section form {
+    width: 290px;
+    height: 294px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+}
+.form-group {
+    width: 290px;
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.form-group label {
+    font-family: var(--font-roboto);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+}
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 290px;
+    height: 39px;
+    padding: 10px 10px 10px 20px;
+    background: #350981;
+    border: 1px solid #47399b;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+}
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    box-shadow: 0 0 0 2px #a4bdff;
+}
+.form-group input::placeholder {
+    color: #a4bdff;
+}
+.login-form-section > p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-family: var(--font-roboto);
+    margin: 10px 0;
+}
+.social-media-wrapper {
+    background: #4404b0;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.custom-btn {
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+/* Right to left */
+.rtlClass .form-group input[type="email"],
+.rtlClass .form-group input[type="password"] {
+    text-align: right;
+}
+
+.rtlClass .form-group {
+    align-items: flex-end;
+}
+
+.rtlClass .form-group-checkbox {
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,100 @@
+.latest-activities {
+    background: linear-gradient(
+        180deg,
+        var(--clr-primary-blue) 50%,
+        var(--clr-primary-dark-blue) 50%
+    );
+    min-height: 702px;
+    position: relative;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.latest-activities-wrapper {
+    width: 1110px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+.latest-activities-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.latest-activities-content div:first-of-type {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.latest-activities-content div:last-child {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.latest-activities-content h2 {
+    font-family: var(--font-chakra-petch);
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1110px) {
+    .latest-activities {
+    }
+
+    .latest-activities-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    .latest-activities-content div:last-child {
+    }
+}
+@media screen and (max-width: 992px) {
+    .latest-activities {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .latest-activities-content {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .latest-activities-content div:first-of-type {
+        justify-content: space-evenly;
+    }
+    .latest-activities-content div:last-child {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .latest-activities-content div:last-child {
+    }
+}
+
+/* Right to left */
+.rtlClass.latest-activities-content {
+    flex-direction: row-reverse;
+}
+
+.rtlClass.latest-activities-content div:first-of-type {
+    text-align: right;
+}
+
+@media screen and (max-width: 992px) {
+    .rtlClass.latest-activities-content {
+        flex-direction: column;
+    }
+    .rtlClass.latest-activities-content div:first-of-type {
+        text-align: center;
+    }
+}
+
+.latest-activities .btnSize {
+    font-size: 14px;
+}
